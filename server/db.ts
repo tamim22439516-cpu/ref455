@@ -942,6 +942,9 @@ class Database {
       } else if (fs.existsSync(STORE_BACKUP_PATH)) {
         console.log('[Database] Restoring from store.backup.json');
         raw = fs.readFileSync(STORE_BACKUP_PATH, 'utf-8');
+      } else if (fs.existsSync(SRC_STORE_PATH)) {
+        console.log('[Database] Restoring initial seed store from src/data/store.json');
+        raw = fs.readFileSync(SRC_STORE_PATH, 'utf-8');
       }
 
       if (raw) {
