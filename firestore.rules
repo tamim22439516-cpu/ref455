@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Brand settings document
+    match /brand_settings/{docId} {
+      allow read, write: if true;
+    }
+    
+    // Product categories
+    match /categories/{categoryId} {
+      allow read, write: if true;
+    }
+
+    // Subsections
+    match /subsections/{subsectionId} {
+      allow read, write: if true;
+    }
+    
+    // Catalog products
+    match /products/{productId} {
+      allow read, write: if true;
+    }
+    
+    // Reseller and employee accounts
+    match /employees/{employeeId} {
+      allow read, write: if true;
+    }
+    
+    // Sales and orders
+    match /sales/{saleId} {
+      allow read, write: if true;
+    }
+    
+    // Withdrawals
+    match /withdrawals/{withdrawalId} {
+      allow read, write: if true;
+    }
+    
+    // Financial transactions ledger
+    match /transactions/{transactionId} {
+      allow read, write: if true;
+    }
+
+    // Training videos
+    match /training_videos/{videoId} {
+      allow read, write: if true;
+    }
+
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read, write: if true;
+    }
+
+    // Payment settings
+    match /payment_settings/{settingId} {
+      allow read, write: if true;
+    }
+
+    // Audit logs
+    match /audit_logs/{logId} {
+      allow read, write: if true;
+    }
+
+    // Idempotency keys
+    match /_idempotency_keys/{keyId} {
+      allow read, write: if true;
+    }
+    
+    // Internal app state backup document
+    match /app_state/{docId} {
+      allow read, write: if true;
+    }
+    
+    // Default fallback
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

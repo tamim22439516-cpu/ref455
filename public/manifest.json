@@ -1,0 +1,49 @@
+{
+  "id": "/",
+  "name": "TAWZOON",
+  "short_name": "TAWZOON",
+  "description": "Dynamic Product Marketing, Reseller & Employee Management Platform",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#009245",
+  "background_color": "#042a17",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "shopping",
+    "business",
+    "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "Products",
+      "url": "/#products",
+      "description": "Browse all products"
+    },
+    {
+      "name": "Marketer Portal",
+      "url": "/#employee",
+      "description": "Freelancer sales & earnings"
+    }
+  ]
+}

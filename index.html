@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>TAWZOON - Dynamic Product Marketing, Reseller &amp; Employee Management Platform</title>
+    <meta name="description" content="Dynamic Product Marketing, Reseller &amp; Employee Management Platform with White Minimalist Interface and Secure Admin Control" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TAWZOON" />
+    <link rel="manifest" href="/manifest.json?v=5" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=5" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg?v=5" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png?v=5" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=5" />
+    <link rel="shortcut icon" href="/favicon.ico?v=5" />
+    <meta property="og:title" content="TAWZOON - Dynamic Product Marketing, Reseller &amp; Employee Management Platform" />
+    <meta property="og:description" content="Dynamic Product Marketing, Reseller &amp; Employee Management Platform with White Minimalist Interface and Secure Admin Control" />
+    <meta property="og:type" content="website" />
+    <link rel="preload" as="image" href="/assets/aistudio/image_b4c018c1.png" media="(min-width: 640px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/aistudio/Tawzoon_Home_Delivery_Advertisement_4c0ccbb4.png" media="(max-width: 639px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/aistudio/image_14863ac2.png" media="(min-width: 640px)" fetchpriority="auto" />
+    <link rel="preload" as="image" href="/assets/aistudio/image_9a39c13e.png" media="(max-width: 639px)" fetchpriority="auto" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('tawzoon_theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch(e) {}
+      })();
+
+      // Prevent two-finger pinch-to-zoom on mobile devices
+      document.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      document.addEventListener('touchmove', function(e) {
+        if (e.touches && e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // iOS / WebKit gesture prevention
+      document.addEventListener('gesturestart', function(e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('gesturechange', function(e) { e.preventDefault(); }, { passive: false });
+      document.addEventListener('gestureend', function(e) { e.preventDefault(); }, { passive: false });
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950">
+    <div id="root"></div>
+    <script>
+      window.__deferredPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window.__deferredPrompt = e;
+        window.dispatchEvent(new CustomEvent('pwa_prompt_ready'));
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

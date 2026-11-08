@@ -1,0 +1,6 @@
+{
+  "name": "TAWZOON",
+  "description": "Dynamic Product Marketing, Reseller & Employee Management Platform with White Minimalist Interface and Secure Admin Control",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

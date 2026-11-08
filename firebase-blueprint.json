@@ -1,0 +1,211 @@
+{
+  "entities": {
+    "BrandSettings": {
+      "title": "Brand Settings",
+      "description": "Store branding, logos, hero headlines and promotional banners",
+      "type": "object",
+      "properties": {
+        "appName": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "faviconUrl": { "type": "string" },
+        "brandDescriptionBn": { "type": "string" },
+        "brandDescriptionEn": { "type": "string" },
+        "heroHeadlineBn": { "type": "string" },
+        "heroHeadlineEn": { "type": "string" },
+        "heroSubheadBn": { "type": "string" },
+        "heroSubheadEn": { "type": "string" },
+        "heroBannerImage": { "type": "string" },
+        "promoBannerActive": { "type": "boolean" },
+        "promoBannerTextBn": { "type": "string" },
+        "promoBannerTextEn": { "type": "string" },
+        "promoBannerLink": { "type": "string" },
+        "resellerBannerBadgeBn": { "type": "string" },
+        "resellerBannerBadgeEn": { "type": "string" },
+        "resellerBannerTitleBn": { "type": "string" },
+        "resellerBannerTitleEn": { "type": "string" },
+        "resellerBannerButtonBn": { "type": "string" },
+        "resellerBannerButtonEn": { "type": "string" },
+        "resellerBannerSubtitleBn": { "type": "string" },
+        "resellerBannerSubtitleEn": { "type": "string" },
+        "resellerBannerFeaturesBn": { "type": "array" },
+        "resellerBannerFeaturesEn": { "type": "array" },
+        "resellerBannerBgImage": { "type": "string" }
+      },
+      "required": ["appName"]
+    },
+    "Category": {
+      "title": "Product Category",
+      "description": "Category for classifying products",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "order": { "type": "number" },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["id", "slug", "name"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Platform product catalog with pricing and reseller commissions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productCode": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "categorySlug": { "type": "string" },
+        "subcategoryBn": { "type": "string" },
+        "subcategoryEn": { "type": "string" },
+        "mrp": { "type": "number" },
+        "commissionType": { "type": "string" },
+        "commissionValue": { "type": "number" },
+        "resellerEarnAmount": { "type": "number" },
+        "stock": { "type": "number" },
+        "images": { "type": "array" },
+        "isPublished": { "type": "boolean" }
+      },
+      "required": ["id", "nameBn", "mrp", "commissionValue"]
+    },
+    "Employee": {
+      "title": "Employee / Reseller Account",
+      "description": "Marketers, resellers and employee accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "status": { "type": "string" },
+        "registeredAt": { "type": "string" },
+        "wallet": { "type": "object" },
+        "passwordHash": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "status"]
+    },
+    "Sale": {
+      "title": "Sale Order",
+      "description": "Sales ledger tracking customer orders and reseller commissions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderCode": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "productId": { "type": "string" },
+        "quantity": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "commissionAmount": { "type": "number" },
+        "paymentStatus": { "type": "string" },
+        "saleDate": { "type": "string" }
+      },
+      "required": ["id", "orderCode", "totalAmount"]
+    },
+    "Withdrawal": {
+      "title": "Withdrawal Request",
+      "description": "Reseller payout requests via bKash or Nagad",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "accountType": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "status": { "type": "string" },
+        "requestDate": { "type": "string" }
+      },
+      "required": ["id", "employeeId", "amount", "status"]
+    },
+    "TrainingVideo": {
+      "title": "Training Video",
+      "description": "Educational videos for resellers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "thumbnailUrl": { "type": "string" },
+        "order": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "videoUrl"]
+    },
+    "Referral": {
+      "title": "Referral Relationship",
+      "description": "Links a referrer (reseller) to a referred client",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "referrerId": { "type": "string" },
+        "clientId": { "type": "string" },
+        "clientName": { "type": "string" },
+        "clientAvatar": { "type": "string" },
+        "joinedAt": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "referrerId", "clientId"]
+    },
+    "ReferralEarning": {
+      "title": "Referral Earning",
+      "description": "Commission earned from a referred client's orders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "referrerId": { "type": "string" },
+        "clientId": { "type": "string" },
+        "saleId": { "type": "string" },
+        "amount": { "type": "number" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "referrerId", "clientId", "amount"]
+    }
+  },
+  "firestore": {
+    "/brand_settings/default": {
+      "schema": "BrandSettings",
+      "description": "Global brand settings document"
+    },
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Catalog categories collection"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Catalog products collection"
+    },
+    "/employees/{employeeId}": {
+      "schema": "Employee",
+      "description": "Resellers and employee directory"
+    },
+    "/sales/{saleId}": {
+      "schema": "Sale",
+      "description": "Sales orders collection"
+    },
+    "/withdrawals/{withdrawalId}": {
+      "schema": "Withdrawal",
+      "description": "Marketer payout requests"
+    },
+    "/training_videos/{videoId}": {
+      "schema": "TrainingVideo",
+      "description": "Reseller training videos"
+    },
+    "/referrals/{referralId}": {
+      "schema": "Referral",
+      "description": "Referral relationships"
+    },
+    "/referral_earnings/{earningId}": {
+      "schema": "ReferralEarning",
+      "description": "Earnings from referrals"
+    },
+    "/app_state/master": {
+      "schema": "object",
+      "description": "Master system database state snapshot for instant synchronization"
+    }
+  }
+}
