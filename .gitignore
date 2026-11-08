@@ -6,3 +6,11 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local Database Stores & Temporary Lock Files
+data/store.json
+data/store.backup.json
+src/data/store.json
+bun.lock
+public/assets/aistudio/
+public/uploads/

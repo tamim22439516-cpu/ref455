@@ -353,7 +353,7 @@ export const ResellerPortal: React.FC = () => {
       case 'cart':
         return <ResellerCartTab onOrderSuccess={fetchAllData} />;
       case 'earnings':
-        return <ResellerEarningsTab transactionsList={transactionsList} salesList={salesList} />;
+        return <ResellerEarningsTab transactionsList={transactionsList} salesList={salesList} withdrawalsList={withdrawalsList} />;
       case 'withdrawal':
         return <ResellerWithdrawalTab withdrawalsList={withdrawalsList} onRefresh={fetchAllData} />;
       case 'notifications':

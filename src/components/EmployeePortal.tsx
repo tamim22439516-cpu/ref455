@@ -850,6 +850,7 @@ export const EmployeePortal: React.FC = () => {
           <ResellerEarningsTab
             transactionsList={transactionsList}
             salesList={salesList}
+            withdrawalsList={withdrawalsList}
           />
         )}
 
